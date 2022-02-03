@@ -12,4 +12,11 @@ async function loadPokemon() {
 
 function renderPokemonInfo() {
     document.getElementById('pokemonName').innerHTML = currentPokemon['name'];
+    renderPokemonImage();
+}
+
+function renderPokemonImage() {
+    let image = document.createElement('img');
+    image.src = currentPokemon['sprites']['front_shiny'];
+    document.getElementById('img').appendChild(image);
 }
