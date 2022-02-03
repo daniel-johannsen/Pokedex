@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    background-color: whitesmoke;
+    font-family: Calibri, sans-serif;
+}
+
+#pokedex {
+    display: flex;
+    flex-wrap: wrap;
+}
