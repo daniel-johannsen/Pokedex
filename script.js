@@ -21,7 +21,11 @@ async function renderPokemonInfo() {
         currentPokemon = await response.json();
         console.log('currentPokemon', currentPokemon);
         createInfoBox(i);
-        pokemonNames.push(currentPokemon['name']);
+        let name = {
+            'name': currentPokemon['name'],
+            'id': `box${i}`
+        };
+        pokemonNames.push(name);
     }
 }
 
@@ -30,6 +34,7 @@ pokemonNames.forEach(function(item) {
     option.value = item;
     dataList.appendChild(option);
 });
+
 
 function createInfoBox(i) {
     document.getElementById('pokedex').innerHTML += `
@@ -77,15 +82,16 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-// function filterNames() {
-//     let input = document.getElementById('search').value;
-//     input = input.toLowerCase();
+function filterNames() {
+    let input = document.getElementById('search');
+    input = input.value.toLowerCase();
 
-//     for (let j = 0; j < pokemonNames.length; j++) {
-//         let name = pokemonNames[j];
+    for (let j = 0; j < pokemonNames.length; j++) {
+        let element = pokemonNames[j];
+        let name = element['name'];
 
-//         if (!name.includes(input)) {
-//             document.getElementById(`box${j}`).classList.add('d-none');
-//         }
-//     }
-// }
+        if (!name.includes(input)) {
+            document.getElementById(name['id']).classList.add('d-none');
+        }
+    }
+}
