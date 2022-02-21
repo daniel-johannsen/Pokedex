@@ -1,7 +1,6 @@
 let currentPokemon;
 let allPokemon = [];
 let pokemonNames = [];
-let dataList = document.getElementById('pokemon');
 
 async function loadPokemon() {
     let url = 'https://pokeapi.co/api/v2/pokemon/';

@@ -12,9 +12,7 @@
 
 <body onload="loadPokemon()">
     <img src="./img/logo.svg" alt="logo">
-    <input placeholder="search" autocomplete="off" list="pokemon">
-    <datalist id="pokemon">
-    </datalist>
+    <input placeholder="search" id="search" autocomplete="off" onkeydown="filterNames()">
     <div id="pokedex">
     </div>
 </body>
