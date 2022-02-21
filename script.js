@@ -88,9 +88,10 @@ function filterNames() {
     for (let j = 0; j < pokemonNames.length; j++) {
         let element = pokemonNames[j];
         let name = element['name'];
+        let id = element['id'];
 
         if (!name.includes(input)) {
-            document.getElementById(name['id']).classList.add('d-none');
+            document.getElementById(id).classList.add('d-none');
         }
     }
 }
