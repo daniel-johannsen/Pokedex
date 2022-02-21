@@ -8,7 +8,6 @@ async function loadPokemon() {
     let apiAsJson = await response.json();
     allPokemon = apiAsJson['results'];
     console.log('Loaded Pokemon:', allPokemon);
-
     renderPokemonInfo();
 }
 
@@ -27,13 +26,6 @@ async function renderPokemonInfo() {
         pokemonNames.push(name);
     }
 }
-
-pokemonNames.forEach(function(item) {
-    let option = document.createElement('option');
-    option.value = item;
-    dataList.appendChild(option);
-});
-
 
 function createInfoBox(i) {
     document.getElementById('pokedex').innerHTML += `
@@ -75,6 +67,7 @@ function createInfoBox(i) {
 function showStats(i) {
     document.getElementById(`stats${i}`).classList.toggle('d-none');
     document.getElementById(`statsTop${i}`).classList.toggle('borders_bottom');
+    //document.getElementById(`box${i}`).classList.toggle('z5');
 }
 
 function capitalizeFirstLetter(string) {
@@ -84,7 +77,6 @@ function capitalizeFirstLetter(string) {
 function filterNames() {
     let input = document.getElementById('search');
     input = input.value.toLowerCase();
-
     for (let j = 0; j < pokemonNames.length; j++) {
         let element = pokemonNames[j];
         let name = element['name'];
