@@ -80,7 +80,7 @@ button:hover {
 
 .box {
     width: 15rem;
-    height: 18rem;
+    height: 19rem;
     margin: 2rem;
     border-radius: 10px;
     display: flex;
@@ -129,11 +129,13 @@ img {
     font-weight: bold;
     color: grey;
     margin-top: 2rem;
+    padding-top: 0.5rem;
 }
 
 .stats {
     width: 100%;
     background-color: whitesmoke;
+    z-index: 9;
 }
 
 .stats_element {
@@ -157,4 +159,10 @@ img {
     background-color: rgb(59, 59, 187);
     border-radius: 3px;
     color: white;
+}
+
+@media(max-width: 620px) {
+    .box {
+        height: unset;
+    }
 }
